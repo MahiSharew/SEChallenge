@@ -1,9 +1,10 @@
-﻿# High Level Design
- //insert img
-
-The following technologies are used in this project.
+# High level solution design 
+![High level solution design](https://github.com/MahiSharew/SEChallenge/blob/master/SystemDesign/SystemDesign.png)
+> High level solution design 
+---
+The following technologies are used in system design
 - **HAProxy**: For load balancing and routing HTTP traffic to services
-- **Træfɪk**
+- **Træfɪk**:Load Balancer for Microservices
 - **Consul**: For service discovery
 - **Docker**: For running the docker containers of the microservices
 - **Autoscaling**
@@ -13,7 +14,7 @@ The following technologies are used in this project.
 - **DyanomoDB Ondemand**: NoSQL database for data storage. 
 - **Dynamodb DAX**: in-memory cache for high performance.
 - **Amazon CloudFront**: For high access speed (performance)
-
+---
 In this project, two architectural approaches are considered:
 1. **Real-time architecture** which provides metrics to customers with at most one hour delay. 
  _Green arrow is used to show the data flow in the system design diagram._  
