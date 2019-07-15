@@ -20,7 +20,8 @@ In this project, two architectural approaches are considered:
  _Green arrow is used to show the data flow in the system design diagram._  
 2. **For reprocessing historical data in case of bugs**. 
 _Red arrow is used to show the Data flow in the system design diagram._ 
-## 1. Real-time Component Architecture
+---
+### 1. Real-time Component Architecture
 - A number of request from ______ are connected to one of the available micro-service endpoint via **HAProxy**. HAProxy will use a reverse proxy to forward the request (XHR REQUEST) to the micro-services.
 - **Autoscaling group** is used for deploying appropriate number micro-services across the available pool of resources. Here, adding or removing micro-service is based on the number of requests received by the system. The  **local consult clients** is responsible for registering micro-services with the **consul server** and to notify the **HAProxy** with the new registerd service. Therefore, with the use of **consul** and **HAProxy** a reliable service discovery and routing can be achieved.
 - For load balancing **Træfɪk load balacer** is utilized as it supports docker and consul as backend(**_?????AS BACK END GOT ME CONFUSED. AS BACKEND HOW DOES IT SUPPORT?_**).The **HAProxy** forwards the requests (such as read, write or number of vistors of a website) to **Træfɪk**.Then the **Taefik** forwards the requests to right (**_appropriate???_**) micro-service.
